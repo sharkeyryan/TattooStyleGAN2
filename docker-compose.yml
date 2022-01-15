@@ -16,5 +16,6 @@ services:
           - capabilities: [gpu]
     volumes:
       - .:/app:delegated
+      - ~/dev/jd-images:/app/raw-images:delegated
     networks:
       - default
