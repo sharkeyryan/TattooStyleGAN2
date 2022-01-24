@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ${BASH_SOURCE%/*}/..
+docker-compose run --rm --entrypoint="python run_training.py --num-gpus=1 --data-dir=\"./datasets\" --config=config-f --dataset=dataset_1 --mirror-augment=true --metric=none --total-kimg=666 --result-dir=\"./result-sets\"" app

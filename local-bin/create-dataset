@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ${BASH_SOURCE%/*}/..
+docker-compose run --rm --entrypoint="python dataset_tool.py create_from_images_raw ./datasets/dataset_1 ./raw-images/1024px" app

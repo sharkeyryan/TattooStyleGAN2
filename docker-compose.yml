@@ -17,5 +17,7 @@ services:
     volumes:
       - .:/app:delegated
       - ~/dev/jd-images:/app/raw-images:delegated
+      - ~/dev/datasets:/app/datasets:delegated
+      - ~/dev/result-sets:/app/result-sets:delegated
     networks:
       - default

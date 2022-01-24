@@ -9,6 +9,8 @@ FROM tensorflow/tensorflow:1.15.0-gpu-py3
 WORKDIR /app
 
 RUN mkdir -p /app/raw-images
+RUN mkdir -p /app/datasets
+RUN mkdir -p /app/result-sets
 
 RUN pip install scipy==1.3.3
 RUN pip install requests==2.22.0
