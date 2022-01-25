@@ -6,6 +6,9 @@
 
 FROM tensorflow/tensorflow:1.15.0-gpu-py3
 
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6 -y
+
 WORKDIR /app
 
 RUN mkdir -p /app/raw-images
@@ -15,3 +18,4 @@ RUN mkdir -p /app/result-sets
 RUN pip install scipy==1.3.3
 RUN pip install requests==2.22.0
 RUN pip install Pillow==6.2.1
+RUN pip install opencv-python

@@ -172,7 +172,15 @@ class TFRecordDataset:
         ex = tf.train.Example()
         ex.ParseFromString(record)
         shape = ex.features.feature['shape'].int64_list.value # pylint: disable=no-member
-        data = ex.features.feature['data'].bytes_list.value[0] # pylint: disable=no-member
+
+        # shape = (1024, 1024, 3)
+
+        # print("\n=======\n{}\n========\n".format(ex.features))
+
+        data = ex.features.feature['img'].bytes_list.value[0] # pylint: disable=no-member
+
+        print("\n=======\n{}\n========\n".format(np.fromstring(data, np.uint8)))
+
         return np.fromstring(data, np.uint8).reshape(shape)
 
 #----------------------------------------------------------------------------
