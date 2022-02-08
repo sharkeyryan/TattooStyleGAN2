@@ -9,6 +9,8 @@ services:
     stdin_open: true
     tty: true
     # command: python3 ./instaScrapper.py
+    environment:
+      - TF_CPP_MIN_LOG_LEVEL=2
     deploy:
       resources:
         reservations:
